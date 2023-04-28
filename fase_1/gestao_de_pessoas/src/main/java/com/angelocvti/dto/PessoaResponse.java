@@ -1,14 +1,14 @@
-package com.angelocvti.domain;
+package com.angelocvti.dto;
 
 import lombok.Data;
 
 import java.time.LocalDate;
 
 @Data
-public class Pessoa {
+public class PessoaResponse {
     private String nome;
     private LocalDate dataNascimento;
-    private Sexo sexo;
-    private Parentesco parentesco;
+    private String sexo;
+    private String parentesco;
     private String observacoes;
 }
