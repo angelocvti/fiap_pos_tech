@@ -1,12 +1,12 @@
-package com.angelocvti.domain;
+package com.angelocvti.dto;
 
 import lombok.Data;
 
 @Data
-public class Endereco {
+public class EnderecoResponse {
     private String rua;
     private Long numero;
     private String bairro;
     private String cidade;
-    private Estado estado;
+    private String estado;
 }

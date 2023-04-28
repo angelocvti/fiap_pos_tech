@@ -1,5 +1,8 @@
 package com.angelocvti.domain;
 
+import lombok.Getter;
+
+@Getter
 public enum Estado {
     AMAZONAS("Amazonas", "AM"),
     ALAGOAS("Alagoas", "AL"),
