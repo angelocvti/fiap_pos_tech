@@ -12,8 +12,8 @@ public enum Parentesco {
     TIA("Tia"),
     PRIMO("Primo"),
     PRIMA("Prima"),
-    AVO1("Avô"),
-    AVO2("Avó"),
+    AVO_M("Avô"),
+    AVO_F("Avó"),
     ESPOSO("Esposo"),
     ESPOSA("Esposa"),
     NAMORADA("Namorada"),
@@ -25,7 +25,7 @@ public enum Parentesco {
 
     private final String parentesco;
 
-    Parentesco(final String parentesco) {
+    Parentesco(String parentesco) {
         this.parentesco = parentesco;
     }
 }

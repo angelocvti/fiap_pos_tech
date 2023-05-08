@@ -14,7 +14,7 @@ public class PessoaRepository {
         pessoas = new HashSet<>();
     }
 
-    public void salvar(Pessoa endereco) {
-        pessoas.add(endereco);
+    public void salvar(final Pessoa pessoa) {
+        pessoas.add(pessoa);
     }
 }
