@@ -50,5 +50,5 @@
         <li>"NETO"</li>
         <li>"NETA"</li>
     </ul>
-    <p>"outrosDados" é uma String.</p>
+    <p>"outrosDados" é uma String até 100 caracteres.</p>
 </div>
