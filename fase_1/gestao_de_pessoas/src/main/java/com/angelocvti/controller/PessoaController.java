@@ -38,12 +38,12 @@ public class PessoaController {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<Object> handleInvalidSortByException(final MethodArgumentNotValidException ex) {
+    public ResponseEntity<Object> handleMethodArgumentNotValidException(final MethodArgumentNotValidException ex) {
         return ResponseEntity.badRequest().body(ex.getAllErrors().get(0).getDefaultMessage());
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
-    public ResponseEntity<Object> handleInvalidSortByException(final HttpMessageNotReadableException ex) {
+    public ResponseEntity<Object> handleHttpMessageNotReadableException(final HttpMessageNotReadableException ex) {
         if (ex.getCause() instanceof InvalidFormatException ife) {
             return ResponseEntity.badRequest().body("O valor: " + ife.getValue() + " é inválido.");
         }

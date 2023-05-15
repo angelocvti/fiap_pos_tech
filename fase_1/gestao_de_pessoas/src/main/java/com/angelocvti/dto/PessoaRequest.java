@@ -12,9 +12,11 @@ import java.time.LocalDate;
 
 @Data
 public class PessoaRequest {
-    @Size(min = 5, max = 50, message = "O nome da rua deve ter entre 5 e 50 caracteres.")
+    @NotNull(message = "O nome deve estar presente.")
+    @Size(min = 5, max = 50, message = "O nome da pessoa deve ter entre 5 e 50 caracteres.")
     private String nome;
 
+    @NotNull(message = "A data de nascimento deve estar presente.")
     @Past(message = "A data de nascimento deve estar no passado.")
     private LocalDate dataNascimento;
 
@@ -26,5 +28,6 @@ public class PessoaRequest {
     @JsonFormat(with = JsonFormat.Feature.ACCEPT_CASE_INSENSITIVE_PROPERTIES)
     private Parentesco parentesco;
 
-    private String observacoes;
+    @Size(max = 100, message = "O campo de dados relevantes deve ter no máximo 100 caracteres.")
+    private String outrosDados;
 }

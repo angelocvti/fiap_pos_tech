@@ -10,5 +10,5 @@ public class PessoaResponse {
     private LocalDate dataNascimento;
     private String sexo;
     private String parentesco;
-    private String observacoes;
+    private String outrosDados;
 }
