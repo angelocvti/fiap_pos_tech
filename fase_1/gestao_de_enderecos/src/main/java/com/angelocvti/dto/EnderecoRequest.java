@@ -9,17 +9,20 @@ import lombok.Data;
 
 @Data
 public class EnderecoRequest {
-    @Size(min = 5, max = 50, message = "O nome da rua deve ter entre 5 e 50 caracteres.")
+    @NotNull(message = "A rua deve estar presente.")
+    @Size(min = 5, max = 50, message = "A rua deve possuir entre 5 e 50 caracteres.")
     private String rua;
 
-    @NotNull(message = "O número do endereço deve estar presente.")
-    @Positive(message = "O número do endereço deve ser um número positivo.")
+    @NotNull(message = "O número deve estar presente.")
+    @Positive(message = "O número deve ser um número positivo.")
     private Long numero;
 
-    @Size(min = 5, max = 50, message = "O nome do bairro deve ter entre 5 e 50 caracteres.")
+    @NotNull(message = "O bairro deve estar presente.")
+    @Size(min = 5, max = 50, message = "O bairro deve possuir entre 5 e 50 caracteres.")
     private String bairro;
 
-    @Size(min = 5, max = 50, message = "O nome da cidade deve ter entre 5 e 50 caracteres.")
+    @NotNull(message = "A cidade deve estar presente.")
+    @Size(min = 5, max = 50, message = "A cidade deve possuir entre 5 e 50 caracteres.")
     private String cidade;
 
     @NotNull(message = "O estado deve estar presente.")

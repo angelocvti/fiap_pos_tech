@@ -6,7 +6,6 @@ import com.angelocvti.dto.EnderecoResponse;
 import com.angelocvti.repository.EnderecoRepository;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import jakarta.validation.Valid;
-import org.apache.catalina.mapper.Mapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,12 +37,12 @@ public class EnderecoController {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<Object> handleInvalidSortByException(final MethodArgumentNotValidException ex) {
+    public ResponseEntity<Object> handleMethodArgumentNotValidException(final MethodArgumentNotValidException ex) {
         return ResponseEntity.badRequest().body(ex.getAllErrors().get(0).getDefaultMessage());
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
-    public ResponseEntity<Object> handleInvalidSortByException(final HttpMessageNotReadableException ex) {
+    public ResponseEntity<Object> handleHttpMessageNotReadableException(final HttpMessageNotReadableException ex) {
         if (ex.getCause() instanceof InvalidFormatException ife) {
             return ResponseEntity.badRequest().body("O valor: " + ife.getValue() + " é inválido.");
         }
